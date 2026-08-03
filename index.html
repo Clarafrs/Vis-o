@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Bengala Sensorial - Inovação e Acessibilidade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Bengala Inteligente</h1>
+        <p>Tecnologia assistiva ao alcance de todos</p>
+
+        <div class="painel-acessibilidade">
+    <button onclick="alternarContraste()">👁️ Alto Contraste</button>
+    <button onclick="aumentarTexto()">A+</button>
+    <button onclick="diminuirTexto()">A-</button>
+</div>
+    </header>
+
+    <main>
+        <article>
+            <h2>Como Funciona o Sensor Ultrassônico?</h2>
+            <p>O sensor envia um pulso sonoro de alta frequência. Quando esse som atinge um obstáculo, ele rebate e volta para o sensor. O Arduino calcula o tempo dessa 'viagem' para saber a distância exata do objeto!</p>
+            
+            <div class="destaque-codigo">
+                <h3>Componentes Principais:</h3>
+                <ul>
+                    <li>Placa Arduino Uno/Nano</li>
+                    <li>Sensor Ultrassônico HC-SR04</li>
+                    <li>Buzzer ou Motor de Vibração</li>
+                    <li>Bateria 9V</li>
+                    <button id="contrast-toggle" aria-label="Alternar alto contraste">
+  Alto Contraste
+</button>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
