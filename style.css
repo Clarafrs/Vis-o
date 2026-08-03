@@ -115,20 +115,20 @@ ul li::before {
 }
 /* Configuração geral do texto da página */
 body {
-  font-family: 'Poppins', sans-serif; /* Fonte legível e moderna */
+  font-family: 'Poppins', sans-serif;
   color: #333333;
 }
 
 /* Estilo do Título Principal */
 h1 {
-  font-size: 2.5rem; /* Aumenta o tamanho (pode ajustar para 3rem se quiser maior) */
-  font-weight: 700;  /* Deixa o texto bem destacado */
-  color: #005f73;    /* Azul Petróleo */
-  border-bottom: 3px solid #005f73; /* Linha de detalhe abaixo do título */
+  font-size: 2.5rem; 
+  font-weight: 700;  
+  color: #005f73;   
+  border-bottom: 3px solid #005f73; 
   padding-bottom: 8px;
 }
 
-/* Detalhes em Azul Petróleo em outros elementos */
+/* Detalhes em Azul Petroleo em outros elementos */
 button {
   background-color: #005f73;
   color: #ffffff;
@@ -138,7 +138,7 @@ button {
   cursor: pointer;
 }
 
-/* Mantém o comportamento correto quando o Alto Contraste for ativado */
+/* Mantem o comportamento correto quando o Alto Contraste for ativado */
 body.high-contrast h1 {
   color: #ffff00 !important;
   border-color: #ffff00 !important;
@@ -149,7 +149,7 @@ body.high-contrast h1 {
 /* -------------------------------------------------- */
 body.alto-contraste {
     background-color: #000000 !important;
-    color: #ffff00 !important; /* Texto em amarelo vibrante */
+    color: #ffff00 !important; 
 }
 
 /* Forca os cartoes e caixas a ficarem pretos com borda amarela */
@@ -179,10 +179,10 @@ body {
 /* Estilo de Alto Contraste */
 body.high-contrast {
   background-color: #000000 !important;
-  color: #ffff00 !important; /* Texto amarelo em fundo preto garante altissimo contraste */
+  color: #ffff00 !important; 
 }
 
-/* Garante que links e botoes tambem fiquem visiveis no alto contraste */
+
 body.high-contrast a {
   color: #00ffff !important;
 }
