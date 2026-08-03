@@ -127,6 +127,7 @@ h1 {
   color: #005f73;   
   border-bottom: 3px solid #005f73; 
   padding-bottom: 8px;
+  font-style: var(--azul-escuro);
 }
 
 
