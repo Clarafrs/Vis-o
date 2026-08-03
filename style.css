@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* Cabecalho Criativo com Gradiente */
+
 header {
     background: linear-gradient(135deg, var(--azul-escuro), var(--azul-principal));
     color: white;
@@ -28,7 +28,7 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
-/* Cartoes de Conteudo (Cards) */
+
 .card {
     background: white;
     border-radius: 12px;
@@ -40,13 +40,13 @@ header h1 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito Hover Criativo (Elevacao ao passar o mouse) */
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 82, 204, 0.2);
 }
 
-/* Caixa de Destaque para o Codigo/Circuito */
+
 .caixa-circuito {
     background-color: var(--azul-suave);
     border: 2px dashed var(--azul-principal);
@@ -55,7 +55,7 @@ header h1 {
     margin-top: 1rem;
 }
 
-/* Lista Personalizada */
+
 ul {
     list-style: none;
 }
@@ -67,12 +67,12 @@ ul li {
 }
 
 ul li::before {
-    content: "⚡"; /* Ícone tematico antes de cada item */
+    content: "⚡";
     position: absolute;
     left: 0;
 }
 
-/* Botoes Interativos */
+
 .btn-acao {
     display: inline-block;
     background-color: var(--azul-principal);
@@ -89,7 +89,7 @@ ul li::before {
     color: var(--azul-escuro);
     box-shadow: 0 0 12px var(--azul-destaque);
 }
-/* Estilo base dos botões de acessibilidade */
+
 .painel-acessibilidade {
     position: fixed;
     top: 10px;
@@ -113,7 +113,7 @@ ul li::before {
 .painel-acessibilidade button:hover {
     background-color: #003d99;
 }
-/* Configuração geral do texto da página */
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #333333;
@@ -128,7 +128,7 @@ h1 {
   padding-bottom: 8px;
 }
 
-/* Detalhes em Azul Petroleo em outros elementos */
+
 button {
   background-color: #005f73;
   color: #ffffff;
@@ -138,21 +138,19 @@ button {
   cursor: pointer;
 }
 
-/* Mantem o comportamento correto quando o Alto Contraste for ativado */
+
 body.high-contrast h1 {
   color: #ffff00 !important;
   border-color: #ffff00 !important;
 }
 
-/* -------------------------------------------------- */
-/* MODO ALTO CONTRASTE (Ativado pelo JavaScript)      */
-/* -------------------------------------------------- */
+
 body.alto-contraste {
     background-color: #000000 !important;
     color: #ffff00 !important; 
 }
 
-/* Forca os cartoes e caixas a ficarem pretos com borda amarela */
+
 body.alto-contraste .card,
 body.alto-contraste header,
 body.alto-contraste .caixa-circuito {
@@ -162,13 +160,13 @@ body.alto-contraste .caixa-circuito {
     box-shadow: none !important;
 }
 
-/* Links em azul brilhante no modo contraste */
+
 body.alto-contraste a,
 body.alto-contraste .btn-acao {
     background-color: #ffff00 !important;
     color: #000000 !important;
 }
-/* Cores Padrao */
+
 body {
   background-color: #ffffff;
   color: #333333;
@@ -176,7 +174,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Estilo de Alto Contraste */
+
 body.high-contrast {
   background-color: #000000 !important;
   color: #ffff00 !important; 
