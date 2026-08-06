@@ -30,6 +30,11 @@ body {
     line-height: 1.6;
 }
 
+.card-glow:hover {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
 
 header {
     background: linear-gradient(135deg, var(--azul-escuro), var(--azul-principal));
