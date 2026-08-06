@@ -173,382 +173,49 @@
                          <strong>Astigmatismo:</strong> Visão embaçada em qualquer distância devido a uma curvatura irregular da córnea.
                     </div>
                 </div>
-
-               
-                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                        <span>Como funciona o Daltonismo?</span>
-                        <span class="text-cyan-400 text-xl font-bold">+</span>
-                    </button>
-                    <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                        O daltonismo é uma alteração genética onde há ausência ou funcionamento incorreto de um ou mais tipos de cones (as células da retina responsáveis por captar as cores vermelho, verde e azul).
-                    </div>
-                </div>
-
-              
-                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                        <span>Por que enxergamos em 3D (visão tridimensional)?</span>
-                        <span class="text-cyan-400 text-xl font-bold">+</span>
-                    </button>
-                    <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                        Temos visão binocular: nossos dois olhos estão separados por alguns centímetros e captam imagens ligeiramente diferentes. O cérebro junta essas duas perspectivas em uma só, calculando a profundidade e a distância.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-    <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>Trabalho Escolar sobre a Visão Humana • Publicado via GitHub Pages</p>
-    </footer>
-
-   
-    <script>
-        document.querySelectorAll('.faq-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('span:last-child');
-
-              
-                content.classList.toggle('hidden');
-
-             
-                if (content.classList.contains('hidden')) {
-                    icon.textContent = '+';
-                } else {
-                    icon.textContent = '−';
-                }
-            });
-        });
-</script>
-    </script>
-
-    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-cyan-400 z-50 transition-all duration-150" style="width: 0%"></div>
-
-<script>
-  window.onscroll = function() {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("progress-bar").style.width = scrolled + "%";
-  };
-</script>
-</body>
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Maravilha da Visão Humana</title>
-  
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .card-glow {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-glow:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.25), 0 8px 10px -6px rgba(6, 182, 212, 0.2);
-            border-color: rgba(6, 182, 212, 0.6);
-        }
-    </style>
-</head>
-<body class="bg-slate-900 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
-
-    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-cyan-400 z-50 transition-all duration-150" style="width: 0%"></div>
-
-    <header class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-40 border-b border-slate-800 mt-1">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-cyan-400 flex items-center gap-2">
-                <span>👁️</span> Visão Humana
-            </a>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
-                <a href="#inicio" class="hover:text-cyan-400 transition-colors">Início</a>
-                <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
-                <a href="#anatomia" class="hover:text-cyan-400 transition-colors">Anatomia</a>
-                <a href="#como-funciona" class="hover:text-cyan-400 transition-colors">Funcionamento</a>
-                <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
-            </nav>
-        </div>
-    </header>
-
-
-    <section id="inicio" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-center text-center">
-        <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase mb-3 px-3 py-1 bg-cyan-950 border border-cyan-800 rounded-full">
-            Trabalho de Biologia & Ciência
-        </span>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white max-w-4xl leading-tight mb-6">
-            Como enxergamos o mundo: A incrível máquina do olho humano
-        </h1>
-        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-8 font-light">
-            Explore a anatomia, teste nosso simulador visual interativo e entenda como o cérebro e os olhos trabalham juntos.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#simulador" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-lg transition-all shadow-lg shadow-cyan-500/20">
-                Testar Simulador Visual
-            </a>
-            <a href="#anatomia" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold rounded-lg border border-slate-700 transition-all">
-                Ver Anatomia
-            </a>
-        </div>
-    </section>
-
-    <section id="simulador" class="py-16 bg-slate-950 border-y border-slate-800">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-10">
-                <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2 block">Interativo</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Simulador de Condições Visuais</h2>
-                <p class="text-slate-400 text-sm md:text-base">Selecione uma condição visual e ajuste a intensidade para entender como ela altera a percepção do mundo.</p>
-            </div>
-
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
-               
-                <div class="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-950 flex items-center justify-center">
-                    <img id="sim-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Cena de Praia para Simulação" class="w-full h-full object-cover transition-all duration-200">
-                    <div id="sim-overlay" class="absolute inset-0 pointer-events-none transition-all duration-200"></div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 items-center">
-                    <div>
-                        <label class="block text-slate-300 font-semibold text-sm mb-2">Condição Visual:</label>
-                        <select id="sim-condition" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
-                            <option value="normal">Visão Normal (Emmetropia)</option>
-                            <option value="miopia">Miopia (Desfocado ao Longe)</option>
-                            <option value="hipermetropia">Hipermetropia (Desfocado de Perto)</option>
-                            <option value="daltonismo-protanopia">Daltonismo (Protanopia - Vermelho)</option>
-                            <option value="daltonismo-deuteranopia">Daltonismo (Deuteranopia - Verde)</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-center mb-2">
-                            <label class="text-slate-300 font-semibold text-sm">Intensidade / Severidade:</label>
-                            <span id="slider-value" class="text-cyan-400 font-bold text-sm">50%</span>
-                        </div>
-                        <input id="sim-slider" type="range" min="0" max="100" value="50" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
-                    </div>
-                </div>
-
-               
-                <div class="mt-6 p-4 bg-slate-950 border border-slate-800 rounded-lg">
-                    <p id="sim-description" class="text-slate-300 text-sm leading-relaxed">
-                        <strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Anatomia do Olho -->
-    <section id="anatomia" class="py-20 max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Anatomia do Olho Humano</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Conheça as principais partes responsáveis por transformar raios de luz em imagens.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
-                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">01</div>
-                <h3 class="text-xl font-bold text-white mb-2">Córnea</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Camada transparente que cobre a frente do olho. Funciona como a primeira lente, refratando a luz para focar o sinal.</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
-                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">02</div>
-                <h3 class="text-xl font-bold text-white mb-2">Íris e Pupila</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">A íris é a parte colorida que controla o tamanho da pupila (o "furo" central), regulando a quantidade de luz que entra.</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
-                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">03</div>
-                <h3 class="text-xl font-bold text-white mb-2">Cristalino</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Uma lente flexível que muda de forma para ajustar o foco de objetos próximos ou distantes (acomodação visual).</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
-                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">04</div>
-                <h3 class="text-xl font-bold text-white mb-2">Retina</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Tela sensível no fundo do olho com fotorreceptores (cones para cores e bastonetes para luminosidade/escuro).</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
-                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">05</div>
-                <h3 class="text-xl font-bold text-white mb-2">Nervo Óptico</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">O "cabo de transmissão" que leva os impulsos elétricos gerados pela retina direto para o cérebro.</p>
-            </div>
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
-                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">06</div>
-                <h3 class="text-xl font-bold text-white mb-2">Humor Vítreo</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Gel transparente que preenche o espaço entre o cristalino e a retina, mantendo a forma esférica do olho.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Passo a Passo -->
-    <section id="como-funciona" class="py-20 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Passo a Passo da Visão</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Como a luz se transforma nas imagens que você enxerga em fração de segundos.</p>
-            </div>
-
-            <div class="space-y-6 max-w-3xl mx-auto">
-                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
-                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">1</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">Entrada da Luz</h4>
-                        <p class="text-slate-400 text-sm mt-1">A luz reflete nos objetos e passa primeiro pela córnea e pela pupila.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
-                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">2</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">Foco e Inversão</h4>
-                        <p class="text-slate-400 text-sm mt-1">O cristalino ajusta o foco e projeta a imagem <strong>invertida</strong> no fundo do olho, sobre a retina.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
-                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">3</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">Conversão em Impulsos Elétricos</h4>
-                        <p class="text-slate-400 text-sm mt-1">Os cones e bastonetes da retina convertem os estímulos luminosos em sinais elétricos.</p>
-                    </div>
-                </div>
-                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
-                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">4</div>
-                    <div>
-                        <h4 class="font-bold text-white text-lg">Processamento Cerebral</h4>
-                        <p class="text-slate-400 text-sm mt-1">O nervo óptico envia esses sinais para o cérebro (córtex visual), que desinverte a imagem e nos faz enxergar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20 max-w-4xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Perguntas Frequentes</h2>
-            <p class="text-slate-400">Respostas rápidas para as dúvidas mais comuns sobre o olho humano.</p>
-        </div>
-
-        <div class="space-y-4">
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Por que a imagem chega invertida na retina?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Devido ao formato biconvexo da lente do olho (o cristalino), os raios de luz se cruzam ao passar por ela, projetando a imagem de ponta-cabeça na retina. É o cérebro que desinverte a imagem durante o processamento.
-                </div>
-            </div>
-
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                     <strong>Miopia:</strong> Dificuldade para enxergar de longe (o olho é mais longo e a imagem se forma antes da retina).<br>
-                     <strong>Hipermetropia:</strong> Dificuldade para enxergar de perto (o olho é mais curto e a imagem se forma atrás da retina).<br>
-                     <strong>Astigmatismo:</strong> Visão embaçada em qualquer distância devido a uma curvatura irregular da córnea.
-                </div>
-            </div>
-
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Como funciona o Daltonismo?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    O daltonismo é uma alteração genética onde há ausência ou funcionamento incorreto de um ou mais tipos de cones (as células da retina responsáveis por captar as cores vermelho, verde e azul).
-                </div>
-            </div>
-
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Por que enxergamos em 3D (visão tridimensional)?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Temos visão binocular: nossos dois olhos estão separados por alguns centímetros e captam imagens ligeiramente diferentes. O cérebro junta essas duas perspectivas em uma só, calculando a profundidade e a distância.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>Trabalho Escolar sobre a Visão Humana • Publicado via GitHub Pages</p>
-    </footer>
-
-    <script>
-       
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("progress-bar").style.width = scrolled + "%";
-        });
-
-        // 2. Interatividade do FAQ
-        document.querySelectorAll('.faq-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                const icon = button.querySelector('span:last-child');
-                content.classList.toggle('hidden');
-                icon.textContent = content.classList.contains('hidden') ? '+' : '−';
-            });
-        });
-
+                <div class="space-y-4" id="faq-accordion">
     
-        const simImage = document.getElementById('sim-image');
-        const simOverlay = document.getElementById('sim-overlay');
-        const simCondition = document.getElementById('sim-condition');
-        const simSlider = document.getElementById('sim-slider');
-        const sliderValue = document.getElementById('slider-value');
-        const simDescription = document.getElementById('sim-description');
+    <!-- Pergunta 1 -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+        <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
+            <span>Por que a imagem chega invertida na retina?</span>
+            <span class="text-cyan-400 text-xl font-bold faq-icon">+</span>
+        </button>
+        <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed faq-content">
+            Devido ao formato biconvexo da lente do olho (o cristalino), os raios de luz se cruzam ao passar por ela, projetando a imagem de ponta-cabeça na retina. É o cérebro que desinverte a imagem durante o processamento.
+        </div>
+    </div>
 
-        const descriptions = {
-            'normal': '<strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.',
-            'miopia': '<strong>Miopia:</strong> Dificuldade para ver de longe. Os objetos distantes ficam desfocados porque o ponto focal se forma antes da retina.',
-            'hipermetropia': '<strong>Hipermetropia:</strong> Dificuldade para ver de perto. Pode causar fadiga visual ao tentar focar objetos próximos.',
-            'daltonismo-protanopia': '<strong>Protanopia (Daltonismo):</strong> Ausência de cones sensíveis à luz vermelha. Tonalidades vermelhas tendem a parecer escurecidas ou acinzentadas.',
-            'daltonismo-deuteranopia': '<strong>Deuteranopia (Daltonismo):</strong> Ausência de cones sensíveis à luz verde. Dificuldade para distinguir entre tons de verde, vermelho e amarelo.'
-        };
+    <!-- Pergunta 2 -->
+    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+        <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
+            <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
+            <span class="text-cyan-400 text-xl font-bold faq-icon">+</span>
+        </button>
+        <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed faq-content">
+            A <strong>Miopia</strong> dificulta enxergar de longe. A <strong>Hipermetropia</strong> dificulta enxergar de perto. O <strong>Astigmatismo</strong> causa visão embaçada ou distorcida em qualquer distância devido à curvatura irregular da córnea.
+        </div>
+    </div>
+    <body><script>
+  document.querySelectorAll('.faq-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqContent = button.nextElementSibling;
+      const faqIcon = button.querySelector('.faq-icon');
 
-        function updateSimulation() {
-            const condition = simCondition.value;
-            const val = simSlider.value;
-            sliderValue.textContent = val + '%';
-            simDescription.innerHTML = descriptions[condition];
+      // Alterna a exibição do texto
+      faqContent.classList.toggle('hidden');
 
-            // Reset de filtros
-            simImage.style.filter = 'none';
-            simOverlay.style.backgroundColor = 'transparent';
+      // Alterna o ícone entre + e -
+      if (faqContent.classList.contains('hidden')) {
+        faqIcon.textContent = '+';
+      } else {
+        faqIcon.textContent = '−';
+      }
+    });
+  });
+</script>
 
-            if (condition === 'miopia') {
-                const blurPx = (val / 100) * 12;
-                simImage.style.filter = `blur(${blurPx}px)`;
-            } else if (condition === 'hipermetropia') {
-                const blurPx = (val / 100) * 6;
-                simImage.style.filter = `blur(${blurPx}px) contrast(${100 + (val/2)}%)`;
-            } else if (condition === 'daltonismo-protanopia') {
-                const opacity = (val / 100) * 0.7;
-                simOverlay.style.backgroundColor = `rgba(0, 100, 200, ${opacity})`;
-                simImage.style.filter = `grayscale(${val}%) sepia(${val/2}%)`;
-            } else if (condition === 'daltonismo-deuteranopia') {
-                const opacity = (val / 100) * 0.7;
-                simOverlay.style.backgroundColor = `rgba(180, 100, 0, ${opacity})`;
-                simImage.style.filter = `grayscale(${val * 0.8}%)`;
-            }
-        }
+</div>
 
-        simCondition.addEventListener('change', updateSimulation);
-        simSlider.addEventListener('input', updateSimulation);
-    </script>
-</body>
-</html>
-</html>
+               
+               
