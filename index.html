@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝐎𝐩𝐭𝐢𝐦𝐨𝐬 𝐕𝐢𝐬𝐢𝐨𝐧 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠</title>
+    <title>Optimos Vision Technology</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -38,7 +38,7 @@
             Trabalho de Biologia & Ciência
         </span>
         <h1 class="text-4xl md:text-6xl font-extrabold text-white max-w-4xl leading-tight mb-6">
-           𝐎𝐩𝐭𝐢𝐦𝐨𝐬 𝐕𝐢𝐬𝐢𝐨𝐧 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨
+           Optimos Vision Technology
         </h1>
         <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-8 font-light">
             Explore a anatomia, entenda a física da captação da luz e descubra as respostas para as principais dúvidas sobre a visão.
@@ -53,7 +53,7 @@
         </div>
     </section>
 
-    
+    <!-- Anatomia -->
     <section id="anatomia" class="py-20 bg-slate-950 border-y border-slate-800">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -86,13 +86,13 @@
                     <h3 class="text-xl font-bold text-white mb-2">Retina</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">Tela sensível no fundo do olho com fotorreceptores (cones para cores e bastonetes para luminosidade/escuro).</p>
                 </div>
-                
+                <!-- Card 5 -->
                 <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all">
                     <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">05</div>
                     <h3 class="text-xl font-bold text-white mb-2">Nervo Óptico</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">O "cabo de transmissão" que leva os impulsos elétricos gerados pela retina direto para o cérebro.</p>
                 </div>
-                
+                <!-- Card 6 -->
                 <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all">
                     <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">06</div>
                     <h3 class="text-xl font-bold text-white mb-2">Humor Vítreo</h3>
@@ -102,7 +102,7 @@
         </div>
     </section>
 
-   
+    <!-- Funcionamento -->
     <section id="como-funciona" class="py-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Passo a Passo da Visão</h2>
@@ -141,7 +141,7 @@
         </div>
     </section>
 
-   
+    <!-- FAQ -->
     <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -150,72 +150,47 @@
             </div>
 
             <div class="space-y-4" id="faq-accordion">
-               
+                <!-- Pergunta 1 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                     <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                         <span>Por que a imagem chega invertida na retina?</span>
-                        <span class="text-cyan-400 text-xl font-bold">+</span>
+                        <span class="text-cyan-400 text-xl font-bold faq-icon">+</span>
                     </button>
-                    <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
+                    <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed faq-content">
                         Devido ao formato biconvexo da lente do olho (o cristalino), os raios de luz se cruzam ao passar por ela, projetando a imagem de ponta-cabeça na retina. É o cérebro que desinverte a imagem durante o processamento.
                     </div>
                 </div>
 
-                
+                <!-- Pergunta 2 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                     <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                         <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
-                        <span class="text-cyan-400 text-xl font-bold">+</span>
+                        <span class="text-cyan-400 text-xl font-bold faq-icon">+</span>
                     </button>
-                    <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                         <strong>Miopia:</strong> Dificuldade para enxergar de longe (o olho é mais longo e a imagem se forma antes da retina).<br>
-                         <strong>Hipermetropia:</strong> Dificuldade para enxergar de perto (o olho é mais curto e a imagem se forma atrás da retina).<br>
-                         <strong>Astigmatismo:</strong> Visão embaçada em qualquer distância devido a uma curvatura irregular da córnea.
+                    <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed faq-content">
+                        A <strong>Miopia</strong> dificulta enxergar de longe. A <strong>Hipermetropia</strong> dificulta enxergar de perto. O <strong>Astigmatismo</strong> causa visão embaçada ou distorcida em qualquer distância devido à curvatura irregular da córnea.
                     </div>
                 </div>
-                <div class="space-y-4" id="faq-accordion">
-    
-    <!-- Pergunta 1 -->
-    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-        <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-            <span>Por que a imagem chega invertida na retina?</span>
-            <span class="text-cyan-400 text-xl font-bold faq-icon">+</span>
-        </button>
-        <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed faq-content">
-            Devido ao formato biconvexo da lente do olho (o cristalino), os raios de luz se cruzam ao passar por ela, projetando a imagem de ponta-cabeça na retina. É o cérebro que desinverte a imagem durante o processamento.
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Pergunta 2 -->
-    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-        <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-            <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
-            <span class="text-cyan-400 text-xl font-bold faq-icon">+</span>
-        </button>
-        <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed faq-content">
-            A <strong>Miopia</strong> dificulta enxergar de longe. A <strong>Hipermetropia</strong> dificulta enxergar de perto. O <strong>Astigmatismo</strong> causa visão embaçada ou distorcida em qualquer distância devido à curvatura irregular da córnea.
-        </div>
-    </div>
-    <body><script>
-  document.querySelectorAll('.faq-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqContent = button.nextElementSibling;
-      const faqIcon = button.querySelector('.faq-icon');
+    <!-- JavaScript do FAQ -->
+    <script>
+      document.querySelectorAll('.faq-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const faqContent = button.nextElementSibling;
+          const faqIcon = button.querySelector('.faq-icon');
 
-      // Alterna a exibição do texto
-      faqContent.classList.toggle('hidden');
+          faqContent.classList.toggle('hidden');
 
-      // Alterna o ícone entre + e -
-      if (faqContent.classList.contains('hidden')) {
-        faqIcon.textContent = '+';
-      } else {
-        faqIcon.textContent = '−';
-      }
-    });
-  });
-</script>
-
-</div>
-
-               
-               
+          if (faqContent.classList.contains('hidden')) {
+            faqIcon.textContent = '+';
+          } else {
+            faqIcon.textContent = '−';
+          }
+        });
+      });
+    </script>
+</body>
+</html>
