@@ -233,5 +233,27 @@
         }
       });
     </script>
+    <section id="quiz-section" class="py-20 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase px-3 py-1 bg-cyan-950 border border-cyan-800 rounded-full">
+                Desafio Interativo
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-2">Quiz da Visão Humana</h2>
+            <p class="text-slate-400">Teste seus conhecimentos sobre o conteúdo apresentado no site!</p>
+        </div>
+
+        <div id="quiz-container" class="bg-slate-950 p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl">
+            </div>
+
+        <div id="quiz-resultado" class="hidden bg-slate-950 p-8 rounded-2xl border border-cyan-500/50 text-center">
+            <h3 class="text-2xl font-bold text-white mb-2">Quiz Concluído!</h3>
+            <p id="quiz-pontuacao" class="text-xl text-cyan-400 font-semibold mb-6"></p>
+            <button onclick="reiniciarQuiz()" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-lg transition-all">
+                Tentar Novamente
+            </button>
+        </div>
+    </div>
+</section>
 </body>
 </html>
