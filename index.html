@@ -225,42 +225,48 @@
       <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
     </script>
 </body>
-<!-- Seção Simulador -->
-<section id="simulador" class="py-20 bg-slate-900 border-t border-slate-800">
+<section id="simulador" class="py-16 bg-slate-950 border-y border-slate-800">
     <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase px-3 py-1 bg-cyan-950 border border-cyan-800 rounded-full">
-                Ferramenta Interativa
-            </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 mb-2">Simulador de Conversão</h2>
-            <p class="text-slate-400">Converta valores percentuais do campo de visão ou refração para graus inteiros.</p>
+        <div class="text-center mb-10">
+            <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2 block">Interativo</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Simulador de Condições Visuais</h2>
+            <p class="text-slate-400 text-sm md:text-base">Selecione uma condição visual e ajuste a intensidade para entender como ela altera a percepção do mundo.</p>
         </div>
 
-        <div class="bg-slate-950 p-6 md:p-8 rounded-2xl border border-slate-800 shadow-xl max-w-xl mx-auto">
-            <div class="mb-6">
-                <label for="input-porcentagem" class="block text-sm font-medium text-slate-300 mb-2">
-                    Porcentagem (%):
-                </label>
-                <input 
-                    type="number" 
-                    id="input-porcentagem" 
-                    min="0" 
-                    max="100" 
-                    placeholder="Digite um valor de 0 a 100" 
-                    class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-cyan-500 transition-colors"
-                />
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
+            <!-- Imagem do Simulador -->
+            <div class="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-950 flex items-center justify-center">
+                <img id="sim-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Cena para Simulação" class="w-full h-full object-cover transition-all duration-200">
+                <div id="sim-overlay" class="absolute inset-0 pointer-events-none transition-all duration-200"></div>
             </div>
 
-            <button 
-                id="btn-converter" 
-                class="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-lg transition-all shadow-lg shadow-cyan-500/20"
-            >
-                Converter para Graus
-            </button>
+            <!-- Controles -->
+            <div class="grid md:grid-cols-2 gap-6 items-center">
+                <div>
+                    <label class="block text-slate-300 font-semibold text-sm mb-2">Condição Visual:</label>
+                    <select id="sim-condition" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                        <option value="normal">Visão Normal (Emmetropia)</option>
+                        <option value="miopia">Miopia (Desfocado ao Longe)</option>
+                        <option value="hipermetropia">Hipermetropia (Desfocado de Perto)</option>
+                        <option value="daltonismo-protanopia">Daltonismo (Protanopia - Vermelho)</option>
+                        <option value="daltonismo-deuteranopia">Daltonismo (Deuteranopia - Verde)</option>
+                    </select>
+                </div>
 
-            <div id="resultado-simulador" class="mt-6 p-4 bg-slate-900 border border-slate-800 rounded-lg text-center hidden">
-                <span class="text-sm text-slate-400 block mb-1">Resultado em Graus:</span>
-                <span id="valor-graus" class="text-3xl font-extrabold text-cyan-400">0°</span>
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-slate-300 font-semibold text-sm">Intensidade / Severidade:</label>
+                        <span id="slider-value" class="text-cyan-400 font-bold text-sm">50%</span>
+                    </div>
+                    <input id="sim-slider" type="range" min="0" max="100" value="50" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                </div>
+            </div>
+
+            <!-- Explicação Dinâmica -->
+            <div class="mt-6 p-4 bg-slate-950 border border-slate-800 rounded-lg">
+                <p id="sim-description" class="text-slate-300 text-sm leading-relaxed">
+                    <strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.
+                </p>
             </div>
         </div>
     </div>

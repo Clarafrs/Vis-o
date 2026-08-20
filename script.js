@@ -124,26 +124,47 @@ if (btnAumentar && btnDiminuir) {
         }
     });
 }
-// Lógica do Simulador (Porcentagem para Graus)
-const inputPorcentagem = document.getElementById('input-porcentagem');
-const btnConverter = document.getElementById('btn-converter');
-const resultadoSimulador = document.getElementById('resultado-simulador');
-const valorGrausDisplay = document.getElementById('valor-graus');
+const simImage = document.getElementById('sim-image');
+const simOverlay = document.getElementById('sim-overlay');
+const simCondition = document.getElementById('sim-condition');
+const simSlider = document.getElementById('sim-slider');
+const sliderValue = document.getElementById('slider-value');
+const simDescription = document.getElementById('sim-description');
 
-if (btnConverter && inputPorcentagem) {
-    btnConverter.addEventListener('click', () => {
-        const valorPorcentagem = parseFloat(inputPorcentagem.value);
+const descriptions = {
+    'normal': '<strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.',
+    'miopia': '<strong>Miopia:</strong> Dificuldade para ver de longe. Os objetos distantes ficam desfocados porque o ponto focal se forma antes da retina.',
+    'hipermetropia': '<strong>Hipermetropia:</strong> Dificuldade para ver de perto. Pode causar fadiga visual ao tentar focar objetos próximos.',
+    'daltonismo-protanopia': '<strong>Protanopia (Daltonismo):</strong> Ausência de cones sensíveis à luz vermelha. Tonalidades vermelhas tendem a parecer escurecidas ou acinzentadas.',
+    'daltonismo-deuteranopia': '<strong>Deuteranopia (Daltonismo):</strong> Ausência de cones sensíveis à luz verde. Dificuldade para distinguir entre tons de verde, vermelho e amarelo.'
+};
 
-        if (isNaN(valorPorcentagem) || valorPorcentagem < 0 || valorPorcentagem > 100) {
-            alert('Por favor, insira um valor válido entre 0 e 100%.');
-            return;
-        }
+function updateSimulation() {
+    const condition = simCondition.value;
+    const val = simSlider.value;
+    sliderValue.textContent = val + '%';
+    simDescription.innerHTML = descriptions[condition];
 
-        // Conversão: (Porcentagem / 100) * 360
-        const graus = (valorPorcentagem / 100) * 360;
+    // Reset de filtros
+    simImage.style.filter = 'none';
+    simOverlay.style.backgroundColor = 'transparent';
 
-        // Exibe o resultado formatado
-        valorGrausDisplay.textContent = `${graus.toFixed(1)}°`;
-        resultadoSimulador.classList.remove('hidden');
-    });
+    if (condition === 'miopia') {
+        const blurPx = (val / 100) * 12;
+        simImage.style.filter = `blur(${blurPx}px)`;
+    } else if (condition === 'hipermetropia') {
+        const blurPx = (val / 100) * 6;
+        simImage.style.filter = `blur(${blurPx}px) contrast(${100 + (val/2)}%)`;
+    } else if (condition === 'daltonismo-protanopia') {
+        const opacity = (val / 100) * 0.7;
+        simOverlay.style.backgroundColor = `rgba(0, 100, 200, ${opacity})`;
+        simImage.style.filter = `grayscale(${val}%) sepia(${val/2}%)`;
+    } else if (condition === 'daltonismo-deuteranopia') {
+        const opacity = (val / 100) * 0.7;
+        simOverlay.style.backgroundColor = `rgba(180, 100, 0, ${opacity})`;
+        simImage.style.filter = `grayscale(${val * 0.8}%)`;
+    }
 }
+
+simCondition.addEventListener('change', updateSimulation);
+simSlider.addEventListener('input', updateSimulation);
