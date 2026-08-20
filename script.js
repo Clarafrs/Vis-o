@@ -1,3 +1,4 @@
+// Dados do Quiz
 const perguntasQuiz = [
     {
         pergunta: "1. Qual estrutura do olho é transparente e atua como a primeira lente refratando a luz?",
@@ -41,8 +42,9 @@ let pontuacao = 0;
 
 function carregarPergunta() {
     const container = document.getElementById('quiz-container');
+    if (!container) return;
+
     const q = perguntasQuiz[indiceAtual];
-    
     let htmlOptions = q.opcoes.map((opcao, index) => `
         <button onclick="responder(${index})" class="w-full text-left p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500 hover:bg-slate-800/80 transition-all font-medium text-slate-200 flex justify-between items-center group">
             <span>${opcao}</span>
@@ -80,7 +82,7 @@ function mostrarResultado() {
     const divResultado = document.getElementById('quiz-resultado');
     divResultado.classList.remove('hidden');
     
-    document.getElementById('quiz-pontuacao').innerText = 
+    document.getElementById('quiz-pontuacao').innerText =
         `Você acertou ${pontuacao} de ${perguntasQuiz.length} perguntas!`;
 }
 
@@ -92,79 +94,94 @@ function reiniciarQuiz() {
     carregarPergunta();
 }
 
-// Inicializar Quiz ao carregar a página
+// Inicialização de Funções e Eventos
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar Quiz
     carregarPergunta();
-});
-// Acessibilidade: Contraste
-const btnContraste = document.getElementById('btn-contraste');
-if (btnContraste) {
-    btnContraste.addEventListener('click', () => {
-        document.body.classList.toggle('alto-contraste');
-    });
-}
 
-// Acessibilidade: Controle do tamanho da fonte
-let tamanhoAtual = 100;
-const btnAumentar = document.getElementById('btn-aumentar');
-const btnDiminuir = document.getElementById('btn-diminuir');
-
-if (btnAumentar && btnDiminuir) {
-    btnAumentar.addEventListener('click', () => {
-        if (tamanhoAtual < 140) {
-            tamanhoAtual += 10;
-            document.documentElement.style.fontSize = tamanhoAtual + '%';
-        }
+    // FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqContent = button.nextElementSibling;
+            const faqIcon = button.querySelector('.faq-icon');
+            faqContent.classList.toggle('hidden');
+            faqIcon.textContent = faqContent.classList.contains('hidden') ? '+' : '−';
+        });
     });
 
-    btnDiminuir.addEventListener('click', () => {
-        if (tamanhoAtual > 80) {
-            tamanhoAtual -= 10;
-            document.documentElement.style.fontSize = tamanhoAtual + '%';
-        }
-    });
-}
-const simImage = document.getElementById('sim-image');
-const simOverlay = document.getElementById('sim-overlay');
-const simCondition = document.getElementById('sim-condition');
-const simSlider = document.getElementById('sim-slider');
-const sliderValue = document.getElementById('slider-value');
-const simDescription = document.getElementById('sim-description');
-
-const descriptions = {
-    'normal': '<strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.',
-    'miopia': '<strong>Miopia:</strong> Dificuldade para ver de longe. Os objetos distantes ficam desfocados porque o ponto focal se forma antes da retina.',
-    'hipermetropia': '<strong>Hipermetropia:</strong> Dificuldade para ver de perto. Pode causar fadiga visual ao tentar focar objetos próximos.',
-    'daltonismo-protanopia': '<strong>Protanopia (Daltonismo):</strong> Ausência de cones sensíveis à luz vermelha. Tonalidades vermelhas tendem a parecer escurecidas ou acinzentadas.',
-    'daltonismo-deuteranopia': '<strong>Deuteranopia (Daltonismo):</strong> Ausência de cones sensíveis à luz verde. Dificuldade para distinguir entre tons de verde, vermelho e amarelo.'
-};
-
-function updateSimulation() {
-    const condition = simCondition.value;
-    const val = simSlider.value;
-    sliderValue.textContent = val + '%';
-    simDescription.innerHTML = descriptions[condition];
-
-    // Reset de filtros
-    simImage.style.filter = 'none';
-    simOverlay.style.backgroundColor = 'transparent';
-
-    if (condition === 'miopia') {
-        const blurPx = (val / 100) * 12;
-        simImage.style.filter = `blur(${blurPx}px)`;
-    } else if (condition === 'hipermetropia') {
-        const blurPx = (val / 100) * 6;
-        simImage.style.filter = `blur(${blurPx}px) contrast(${100 + (val/2)}%)`;
-    } else if (condition === 'daltonismo-protanopia') {
-        const opacity = (val / 100) * 0.7;
-        simOverlay.style.backgroundColor = `rgba(0, 100, 200, ${opacity})`;
-        simImage.style.filter = `grayscale(${val}%) sepia(${val/2}%)`;
-    } else if (condition === 'daltonismo-deuteranopia') {
-        const opacity = (val / 100) * 0.7;
-        simOverlay.style.backgroundColor = `rgba(180, 100, 0, ${opacity})`;
-        simImage.style.filter = `grayscale(${val * 0.8}%)`;
+    // Acessibilidade: Contraste
+    const btnContraste = document.getElementById('btn-contraste');
+    if (btnContraste) {
+        btnContraste.addEventListener('click', () => {
+            document.body.classList.toggle('alto-contraste');
+        });
     }
-}
 
-simCondition.addEventListener('change', updateSimulation);
-simSlider.addEventListener('input', updateSimulation);
+    // Acessibilidade: Tamanho da Fonte
+    let tamanhoAtual = 100;
+    const btnAumentar = document.getElementById('btn-aumentar');
+    const btnDiminuir = document.getElementById('btn-diminuir');
+
+    if (btnAumentar && btnDiminuir) {
+        btnAumentar.addEventListener('click', () => {
+            if (tamanhoAtual < 140) {
+                tamanhoAtual += 10;
+                document.documentElement.style.fontSize = tamanhoAtual + '%';
+            }
+        });
+
+        btnDiminuir.addEventListener('click', () => {
+            if (tamanhoAtual > 80) {
+                tamanhoAtual -= 10;
+                document.documentElement.style.fontSize = tamanhoAtual + '%';
+            }
+        });
+    }
+
+    // Simulador Visual
+    const simImage = document.getElementById('sim-image');
+    const simOverlay = document.getElementById('sim-overlay');
+    const simCondition = document.getElementById('sim-condition');
+    const simSlider = document.getElementById('sim-slider');
+    const sliderValue = document.getElementById('slider-value');
+    const simDescription = document.getElementById('sim-description');
+
+    if (simCondition && simSlider) {
+        const descriptions = {
+            'normal': '<strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.',
+            'miopia': '<strong>Miopia:</strong> Dificuldade para ver de longe. Os objetos distantes ficam desfocados porque o ponto focal se forma antes da retina.',
+            'hipermetropia': '<strong>Hipermetropia:</strong> Dificuldade para ver de perto. Pode causar fadiga visual ao tentar focar objetos próximos.',
+            'daltonismo-protanopia': '<strong>Protanopia (Daltonismo):</strong> Ausência de cones sensíveis à luz vermelha. Tonalidades vermelhas tendem a parecer escurecidas ou acinzentadas.',
+            'daltonismo-deuteranopia': '<strong>Deuteranopia (Daltonismo):</strong> Ausência de cones sensíveis à luz verde. Dificuldade para distinguir entre tons de verde, vermelho e amarelo.'
+        };
+
+        function updateSimulation() {
+            const condition = simCondition.value;
+            const val = simSlider.value;
+            sliderValue.textContent = val + '%';
+            simDescription.innerHTML = descriptions[condition];
+
+            simImage.style.filter = 'none';
+            simOverlay.style.backgroundColor = 'transparent';
+
+            if (condition === 'miopia') {
+                const blurPx = (val / 100) * 12;
+                simImage.style.filter = `blur(${blurPx}px)`;
+            } else if (condition === 'hipermetropia') {
+                const blurPx = (val / 100) * 6;
+                simImage.style.filter = `blur(${blurPx}px) contrast(${100 + (val/2)}%)`;
+            } else if (condition === 'daltonismo-protanopia') {
+                const opacity = (val / 100) * 0.7;
+                simOverlay.style.backgroundColor = `rgba(0, 100, 200, ${opacity})`;
+                simImage.style.filter = `grayscale(${val}%) sepia(${val/2}%)`;
+            } else if (condition === 'daltonismo-deuteranopia') {
+                const opacity = (val / 100) * 0.7;
+                simOverlay.style.backgroundColor = `rgba(180, 100, 0, ${opacity})`;
+                simImage.style.filter = `grayscale(${val * 0.8}%)`;
+            }
+        }
+
+        simCondition.addEventListener('change', updateSimulation);
+        simSlider.addEventListener('input', updateSimulation);
+    }
+});

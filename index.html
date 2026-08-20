@@ -29,9 +29,11 @@
             </a>
             <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-300">
                 <a href="#inicio" class="hover:text-cyan-400 transition-colors">Início</a>
+                <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
                 <a href="#anatomia" class="hover:text-cyan-400 transition-colors">Anatomia</a>
                 <a href="#como-funciona" class="hover:text-cyan-400 transition-colors">Funcionamento</a>
-                <a href="#faq" class="hover:text-cyan-400 transition-colors">Perguntas Frequentes</a>
+                <a href="#quiz" class="hover:text-cyan-400 transition-colors">Quiz</a>
+                <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
             </nav>
         </div>
     </header>
@@ -42,7 +44,7 @@
             Trabalho de Biologia & Ciência
         </span>
         <h1 class="text-4xl md:text-6xl font-extrabold text-white max-w-4xl leading-tight mb-6">
-           Optimos Vision Technology
+            Optimos Vision Technology
         </h1>
         <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-8 font-light">
             Explore a anatomia, entenda a física da captação da luz e descubra as respostas para as principais dúvidas sobre a visão.
@@ -57,90 +59,151 @@
         </div>
     </section>
 
-    <!-- Anatomia -->
-    <section id="anatomia" class="py-20 bg-slate-950 border-y border-slate-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Anatomia do Olho Humano</h2>
-                <p class="text-slate-400 max-w-xl mx-auto">Conheça as principais partes responsáveis por transformar raios de luz em imagens.</p>
+    <!-- Simulador de Condições Visuais -->
+    <section id="simulador" class="py-16 bg-slate-950 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2 block">Interativo</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Simulador de Condições Visuais</h2>
+                <p class="text-slate-400 text-sm md:text-base">Selecione uma condição visual e ajuste a intensidade para entender como ela altera a percepção do mundo.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all card-glow">
-                    <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">01</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Córnea</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Camada transparente que cobre a frente do olho. Funciona como a primeira lente, refratando a luz para focar o sinal.</p>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
+                <div class="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-950 flex items-center justify-center">
+                    <img id="sim-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Cena para Simulação" class="w-full h-full object-cover transition-all duration-200">
+                    <div id="sim-overlay" class="absolute inset-0 pointer-events-none transition-all duration-200"></div>
                 </div>
-                <!-- Card 2 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all card-glow">
-                    <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">02</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Íris e Pupila</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">A íris é a parte colorida que controla o tamanho da pupila (o "furo" central), regulando a quantidade de luz que entra.</p>
+
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <label class="block text-slate-300 font-semibold text-sm mb-2">Condição Visual:</label>
+                        <select id="sim-condition" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
+                            <option value="normal">Visão Normal (Emmetropia)</option>
+                            <option value="miopia">Miopia (Desfocado ao Longe)</option>
+                            <option value="hipermetropia">Hipermetropia (Desfocado de Perto)</option>
+                            <option value="daltonismo-protanopia">Daltonismo (Protanopia - Vermelho)</option>
+                            <option value="daltonismo-deuteranopia">Daltonismo (Deuteranopia - Verde)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-slate-300 font-semibold text-sm">Intensidade / Severidade:</label>
+                            <span id="slider-value" class="text-cyan-400 font-bold text-sm">50%</span>
+                        </div>
+                        <input id="sim-slider" type="range" min="0" max="100" value="50" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
+                    </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all card-glow">
-                    <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">03</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Cristalino</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Uma lente flexível que muda de forma para ajustar o foco de objetos próximos ou distantes (acomodação visual).</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all card-glow">
-                    <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">04</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Retina</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Tela sensível no fundo do olho com fotorreceptores (cones para cores e bastonetes para luminosidade/escuro).</p>
-                </div>
-                <!-- Card 5 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all card-glow">
-                    <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">05</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Nervo Óptico</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">O "cabo de transmissão" que leva os impulsos elétricos gerados pela retina direto para o cérebro.</p>
-                </div>
-                <!-- Card 6 -->
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-cyan-500/50 transition-all card-glow">
-                    <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">06</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Humor Vítreo</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Gel transparente que preenche o espaço entre o cristalino e a retina, mantendo a forma esférica do olho.</p>
+
+                <div class="mt-6 p-4 bg-slate-950 border border-slate-800 rounded-lg">
+                    <p id="sim-description" class="text-slate-300 text-sm leading-relaxed">
+                        <strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Funcionamento -->
-    <section id="como-funciona" class="py-20 px-6 max-w-6xl mx-auto">
+    <!-- Anatomia -->
+    <section id="anatomia" class="py-20 max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Passo a Passo da Visão</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Como a luz se transforma nas imagens que você enxerga em fração de segundos.</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Anatomia do Olho Humano</h2>
+            <p class="text-slate-400 max-w-xl mx-auto">Conheça as principais partes responsáveis por transformar raios de luz em imagens.</p>
         </div>
 
-        <div class="space-y-6 max-w-3xl mx-auto">
-            <div class="flex gap-4 items-start bg-slate-950 p-5 rounded-xl border border-slate-800">
-                <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">1</div>
-                <div>
-                    <h4 class="font-bold text-white text-lg">Entrada da Luz</h4>
-                    <p class="text-slate-400 text-sm mt-1">A luz reflete nos objetos e passa primeiro pela córnea e pela pupila.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
+                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">01</div>
+                <h3 class="text-xl font-bold text-white mb-2">Córnea</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Camada transparente que cobre a frente do olho. Funciona como a primeira lente, refratando a luz para focar o sinal.</p>
+            </div>
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
+                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">02</div>
+                <h3 class="text-xl font-bold text-white mb-2">Íris e Pupila</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">A íris é a parte colorida que controla o tamanho da pupila (o "furo" central), regulando a quantidade de luz que entra.</p>
+            </div>
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
+                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">03</div>
+                <h3 class="text-xl font-bold text-white mb-2">Cristalino</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Uma lente flexível que muda de forma para ajustar o foco de objetos próximos ou distantes (acomodação visual).</p>
+            </div>
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
+                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">04</div>
+                <h3 class="text-xl font-bold text-white mb-2">Retina</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Tela sensível no fundo do olho com fotorreceptores (cones para cores e bastonetes para luminosidade/escuro).</p>
+            </div>
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
+                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">05</div>
+                <h3 class="text-xl font-bold text-white mb-2">Nervo Óptico</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">O "cabo de transmissão" que leva os impulsos elétricos gerados pela retina direto para o cérebro.</p>
+            </div>
+            <div class="p-6 bg-slate-900 border border-slate-800 rounded-xl card-glow">
+                <div class="w-12 h-12 bg-cyan-950 border border-cyan-800 rounded-lg flex items-center justify-center text-cyan-400 font-bold text-lg mb-4">06</div>
+                <h3 class="text-xl font-bold text-white mb-2">Humor Vítreo</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Gel transparente que preenche o espaço entre o cristalino e a retina, mantendo a forma esférica do olho.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionamento -->
+    <section id="como-funciona" class="py-20 bg-slate-950 border-y border-slate-800 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Passo a Passo da Visão</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Como a luz se transforma nas imagens que você enxerga em fração de segundos.</p>
+            </div>
+
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
+                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">1</div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Entrada da Luz</h4>
+                        <p class="text-slate-400 text-sm mt-1">A luz reflete nos objetos e passa primeiro pela córnea e pela pupila.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
+                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">2</div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Foco e Inversão</h4>
+                        <p class="text-slate-400 text-sm mt-1">O cristalino ajusta o foco e projeta a imagem <strong>invertida</strong> no fundo do olho, sobre a retina.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
+                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">3</div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Conversão em Impulsos Elétricos</h4>
+                        <p class="text-slate-400 text-sm mt-1">Os cones e bastonetes da retina convertem os estímulos luminosos em sinais elétricos.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-slate-900 p-5 rounded-xl border border-slate-800">
+                    <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">4</div>
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Processamento Cerebral</h4>
+                        <p class="text-slate-400 text-sm mt-1">O nervo óptico envia esses sinais para o cérebro (córtex visual), que desinverte a imagem e nos faz enxergar.</p>
+                    </div>
                 </div>
             </div>
-            <div class="flex gap-4 items-start bg-slate-950 p-5 rounded-xl border border-slate-800">
-                <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">2</div>
-                <div>
-                    <h4 class="font-bold text-white text-lg">Foco e Inversão</h4>
-                    <p class="text-slate-400 text-sm mt-1">O cristalino ajusta o foco e projeta a imagem <strong>invertida</strong> no fundo do olho, sobre a retina.</p>
-                </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interativo -->
+    <section id="quiz" class="py-20 max-w-4xl mx-auto px-6">
+        <div class="text-center mb-10">
+            <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2 block">Teste Seus Conhecimentos</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Quiz sobre a Visão</h2>
+        </div>
+
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
+            <div id="quiz-container">
+                <!-- Conteúdo carregado via JavaScript -->
             </div>
-            <div class="flex gap-4 items-start bg-slate-950 p-5 rounded-xl border border-slate-800">
-                <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">3</div>
-                <div>
-                    <h4 class="font-bold text-white text-lg">Conversão em Impulsos Elétricos</h4>
-                    <p class="text-slate-400 text-sm mt-1">Os cones e bastonetes da retina convertem os estímulos luminosos em sinais elétricos.</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start bg-slate-950 p-5 rounded-xl border border-slate-800">
-                <div class="bg-cyan-500 text-slate-950 font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-1">4</div>
-                <div>
-                    <h4 class="font-bold text-white text-lg">Processamento Cerebral</h4>
-                    <p class="text-slate-400 text-sm mt-1">O nervo óptico envia esses sinais para o cérebro (córtex visual), que desinverte a imagem e nos faz enxergar.</p>
-                </div>
+
+            <div id="quiz-resultado" class="hidden text-center py-6">
+                <h3 class="text-2xl font-bold text-white mb-4">Quiz Concluído!</h3>
+                <p id="quiz-pontuacao" class="text-cyan-400 text-xl font-semibold mb-6"></p>
+                <button onclick="reiniciarQuiz()" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-lg transition-all">
+                    Refazer Quiz
+                </button>
             </div>
         </div>
     </section>
@@ -154,7 +217,6 @@
             </div>
 
             <div class="space-y-4" id="faq-accordion">
-                <!-- Pergunta 1 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                     <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                         <span>Por que a imagem chega invertida na retina?</span>
@@ -165,7 +227,6 @@
                     </div>
                 </div>
 
-                <!-- Pergunta 2 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                     <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                         <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
@@ -179,96 +240,12 @@
         </div>
     </section>
 
-    <!-- JavaScripts Integrados -->
-    <script>
-      // 1. Script do FAQ Accordion
-      document.querySelectorAll('.faq-btn').forEach(button => {
-        button.addEventListener('click', () => {
-          const faqContent = button.nextElementSibling;
-          const faqIcon = button.querySelector('.faq-icon');
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>Optimos Vision Technology • Publicado via GitHub Pages</p>
+    </footer>
 
-          faqContent.classList.toggle('hidden');
-
-          if (faqContent.classList.contains('hidden')) {
-            faqIcon.textContent = '+';
-          } else {
-            faqIcon.textContent = '−';
-          }
-        });
-      });
-
-      // 2. Script de Acessibilidade (Alto Contraste)
-      const btnContraste = document.getElementById('btn-contraste');
-      btnContraste.addEventListener('click', () => {
-        document.body.classList.toggle('alto-contraste');
-        console.log('Alto contraste ativo:', document.body.classList.contains('alto-contraste'));
-      });
-
-      // 3. Script de Controle de Tamanho da Fonte
-      let tamanhoAtual = 100; // Porcentagem inicial
-      const btnAumentar = document.getElementById('btn-aumentar');
-      const btnDiminuir = document.getElementById('btn-diminuir');
-
-      btnAumentar.addEventListener('click', () => {
-        if (tamanhoAtual < 140) { // Limite máximo 140%
-          tamanhoAtual += 10;
-          document.documentElement.style.fontSize = tamanhoAtual + '%';
-        }
-      });
-
-      btnDiminuir.addEventListener('click', () => {
-        if (tamanhoAtual > 80) { // Limite mínimo 80%
-          tamanhoAtual -= 10;
-          document.documentElement.style.fontSize = tamanhoAtual + '%';
-        }
-      });
-      <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
-    </script>
+    <!-- Script separado -->
+    <script src="script.js"></script>
 </body>
-<section id="simulador" class="py-16 bg-slate-950 border-y border-slate-800">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-10">
-            <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-2 block">Interativo</span>
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Simulador de Condições Visuais</h2>
-            <p class="text-slate-400 text-sm md:text-base">Selecione uma condição visual e ajuste a intensidade para entender como ela altera a percepção do mundo.</p>
-        </div>
-
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-2xl">
-            <!-- Imagem do Simulador -->
-            <div class="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-950 flex items-center justify-center">
-                <img id="sim-image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Cena para Simulação" class="w-full h-full object-cover transition-all duration-200">
-                <div id="sim-overlay" class="absolute inset-0 pointer-events-none transition-all duration-200"></div>
-            </div>
-
-            <!-- Controles -->
-            <div class="grid md:grid-cols-2 gap-6 items-center">
-                <div>
-                    <label class="block text-slate-300 font-semibold text-sm mb-2">Condição Visual:</label>
-                    <select id="sim-condition" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors">
-                        <option value="normal">Visão Normal (Emmetropia)</option>
-                        <option value="miopia">Miopia (Desfocado ao Longe)</option>
-                        <option value="hipermetropia">Hipermetropia (Desfocado de Perto)</option>
-                        <option value="daltonismo-protanopia">Daltonismo (Protanopia - Vermelho)</option>
-                        <option value="daltonismo-deuteranopia">Daltonismo (Deuteranopia - Verde)</option>
-                    </select>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center mb-2">
-                        <label class="text-slate-300 font-semibold text-sm">Intensidade / Severidade:</label>
-                        <span id="slider-value" class="text-cyan-400 font-bold text-sm">50%</span>
-                    </div>
-                    <input id="sim-slider" type="range" min="0" max="100" value="50" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400">
-                </div>
-            </div>
-
-            <!-- Explicação Dinâmica -->
-            <div class="mt-6 p-4 bg-slate-950 border border-slate-800 rounded-lg">
-                <p id="sim-description" class="text-slate-300 text-sm leading-relaxed">
-                    <strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
 </html>
