@@ -124,3 +124,26 @@ if (btnAumentar && btnDiminuir) {
         }
     });
 }
+// Lógica do Simulador (Porcentagem para Graus)
+const inputPorcentagem = document.getElementById('input-porcentagem');
+const btnConverter = document.getElementById('btn-converter');
+const resultadoSimulador = document.getElementById('resultado-simulador');
+const valorGrausDisplay = document.getElementById('valor-graus');
+
+if (btnConverter && inputPorcentagem) {
+    btnConverter.addEventListener('click', () => {
+        const valorPorcentagem = parseFloat(inputPorcentagem.value);
+
+        if (isNaN(valorPorcentagem) || valorPorcentagem < 0 || valorPorcentagem > 100) {
+            alert('Por favor, insira um valor válido entre 0 e 100%.');
+            return;
+        }
+
+        // Conversão: (Porcentagem / 100) * 360
+        const graus = (valorPorcentagem / 100) * 360;
+
+        // Exibe o resultado formatado
+        valorGrausDisplay.textContent = `${graus.toFixed(1)}°`;
+        resultadoSimulador.classList.remove('hidden');
+    });
+}
