@@ -72,6 +72,33 @@
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+    <!-- Botão e Painel de Acessibilidade Ajustados -->
+<div style="position: fixed; bottom: 24px; right: 24px; z-index: 9999;">
+    <!-- Botão Principal -->
+    <button id="acc-toggle-btn" type="button" class="bg-cyan-500 text-slate-950 w-14 h-14 rounded-full shadow-2xl hover:bg-cyan-400 font-bold flex items-center justify-center transition-all text-2xl cursor-pointer border-2 border-white" title="Acessibilidade" style="display: flex !important; visibility: visible !important; opacity: 1 !important;">
+        ♿
+    </button>
+
+    <!-- Menu de Opções -->
+    <div id="acc-menu" class="hidden absolute bottom-16 right-0 bg-slate-900 border border-slate-700 p-4 rounded-xl shadow-2xl w-64 space-y-3">
+        <h4 class="text-white font-bold text-sm border-b border-slate-800 pb-2">Opções de Acessibilidade</h4>
+        
+        <button id="btn-contrast" type="button" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 px-3 rounded flex justify-between items-center transition-colors">
+            <span>Alto Contraste</span>
+            <span class="text-cyan-400 font-bold">🌗</span>
+        </button>
+
+        <button id="btn-font-increase" type="button" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 px-3 rounded flex justify-between items-center transition-colors">
+            <span>Aumentar Fonte</span>
+            <span class="text-cyan-400 font-bold">A+</span>
+        </button>
+
+        <button id="btn-font-reset" type="button" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 px-3 rounded flex justify-between items-center transition-colors">
+            <span>Tamanho Normal</span>
+            <span class="text-cyan-400 font-bold">A-</span>
+        </button>
+    </div>
+</div>
 
     <!-- Barra de Progresso de Leitura -->
     <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-cyan-400 z-50 transition-all duration-150" style="width: 0%"></div>

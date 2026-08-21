@@ -1,3 +1,40 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const accToggleBtn = document.getElementById('acc-toggle-btn');
+    const accMenu = document.getElementById('acc-menu');
+    const btnContrast = document.getElementById('btn-contrast');
+    const btnFontIncrease = document.getElementById('btn-font-increase');
+    const btnFontReset = document.getElementById('btn-font-reset');
+
+    if (accToggleBtn && accMenu) {
+        // Toggle do Menu
+        accToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            accMenu.classList.toggle('hidden');
+        });
+
+        // Alto Contraste
+        btnContrast.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+        });
+
+        // Aumentar Fonte
+        btnFontIncrease.addEventListener('click', () => {
+            document.body.classList.add('large-font');
+        });
+
+        // Resetar Fonte
+        btnFontReset.addEventListener('click', () => {
+            document.body.classList.remove('large-font');
+        });
+
+        // Fechar menu ao clicar fora dele
+        document.addEventListener('click', (e) => {
+            if (!accMenu.contains(e.target) && !accToggleBtn.contains(e.target)) {
+                accMenu.classList.add('hidden');
+            }
+        });
+    }
+});
 // 3. Lógica do Simulador de Visão
 const simImage = document.getElementById('sim-image');
 const simOverlay = document.getElementById('sim-overlay');
