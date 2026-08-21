@@ -195,15 +195,56 @@
     </section>
 
     <!-- FAQ -->
- <!-- FAQ Ampliado -->
+<!-- FAQ & Teste do Ponto Cego -->
     <section id="faq" class="py-20 max-w-4xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Perguntas Frequentes</h2>
-            <p class="text-slate-400">Respostas rápidas para as dúvidas mais comuns e curiosidades sobre a visão humana.</p>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Perguntas Frequentes & Curiosidades</h2>
+            <p class="text-slate-400">Respostas para as dúvidas mais comuns e uma experiência prática sobre como o cérebro processa a visão.</p>
         </div>
 
+        <!-- Bloco Interativo: Teste do Ponto Cego -->
+        <div class="mb-12 bg-slate-900 border border-cyan-500/30 rounded-2xl p-6 md:p-8 shadow-xl">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-2xl">🧪</span>
+                <h3 class="text-2xl font-bold text-white">Teste Prático: Encontre o seu Ponto Cego</h3>
+            </div>
+            
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                O ponto cego é o local na retina onde fica o nervo óptico — como não há fotorreceptores ali, você não capta luz nessa área. Faça o teste abaixo para comprovar:
+            </p>
+
+            <!-- Área dos Símbolos -->
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-8 my-6 flex justify-between items-center max-w-md mx-auto select-none">
+                <span class="text-3xl font-bold text-cyan-400">L</span>
+                <span class="text-4xl font-extrabold text-cyan-400">+</span>
+                <span class="text-3xl font-bold text-cyan-400">R</span>
+            </div>
+
+            <!-- Instruções do Passo a Passo -->
+            <div class="bg-slate-900/80 p-4 rounded-lg border border-slate-800 text-xs md:text-sm text-slate-400 space-y-2">
+                <p><strong>Como fazer:</strong></p>
+                <ol class="list-decimal list-inside space-y-1">
+                    <li>Aproxime o rosto da tela a cerca de 30 a 40 cm.</li>
+                    <li><strong>Para testar o olho esquerdo:</strong> Tape o olho direito, olhe fixamente para a letra <strong>R</strong> e vá aproximando ou afastando a cabeça devagar. Em uma certa distância, o sinal <strong>+</strong> vai sumir!</li>
+                    <li><strong>Para testar o olho direito:</strong> Tape o olho esquerdo, olhe fixamente para a letra <strong>L</strong> e faça o mesmo movimento. O sinal <strong>+</strong> desaparecerá!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Lista de Sanfona das Perguntas -->
         <div class="space-y-4">
             <!-- Pergunta 1 -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
+                    <span>Por que o símbolo do teste desaparece, mas não fica um "buraco negro"?</span>
+                    <span class="text-cyan-400 text-xl font-bold">+</span>
+                </button>
+                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
+                    Quando a imagem do sinal "+" cai exatamente sobre a cabeça do nervo óptico (o ponto cego), o cérebro não recebe dados visuais daquele ponto específico. Em vez de deixar uma mancha preta, o cérebro "preenche" o espaço usando a cor de fundo do redor (o cinza escuro da caixa) para criar uma imagem contínua.
+                </div>
+            </div>
+
+            <!-- Pergunta 2 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Por que a imagem chega invertida na retina?</span>
@@ -214,7 +255,7 @@
                 </div>
             </div>
 
-            <!-- Pergunta 2 -->
+            <!-- Pergunta 3 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
@@ -227,7 +268,7 @@
                 </div>
             </div>
 
-            <!-- Pergunta 3 -->
+            <!-- Pergunta 4 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>O que é a Presbiopia (ou "vista cansada")?</span>
@@ -238,17 +279,6 @@
                 </div>
             </div>
 
-            <!-- Pergunta 4 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Por que temos um "ponto cego" nos olhos?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Existe uma região na retina por onde passa o nervo óptico para levar as informações ao cérebro. Como nessa pequena área não existem fotorreceptores (cones nem bastonetes), ela não capta luz. O cérebro usa a imagem do outro olho e a memória visual do ambiente para "preencher" essa falha automaticamente.
-                </div>
-            </div>
-
             <!-- Pergunta 5 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
@@ -256,7 +286,7 @@
                     <span class="text-cyan-400 text-xl font-bold">+</span>
                 </button>
                 <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    O daltonismo é uma alteração genética (na maioria das vezes hereditária) onde há ausência ou funcionamento incorreto de um ou mais tipos de cones — as células sensíveis às cores (vermelho, verde e azul). Isso altera a capacidade de distinguir certos tons de cores.
+                    O daltonismo é uma alteração genética onde há ausência ou funcionamento incorreto de um ou mais tipos de cones — as células sensíveis às cores (vermelho, verde e azul). Isso altera a capacidade de distinguir certos tons de cores.
                 </div>
             </div>
 
