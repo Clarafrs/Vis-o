@@ -61,3 +61,29 @@ function updateSimulation() {
 
 simCondition.addEventListener('change', updateSimulation);
 simSlider.addEventListener('input', updateSimulation);
+// 4. Funcionalidades do Menu de Acessibilidade
+const accToggleBtn = document.getElementById('acc-toggle-btn');
+const accMenu = document.getElementById('acc-menu');
+const btnContrast = document.getElementById('btn-contrast');
+const btnFontIncrease = document.getElementById('btn-font-increase');
+const btnFontReset = document.getElementById('btn-font-reset');
+
+// Abre/Fecha o menu de acessibilidade
+accToggleBtn.addEventListener('click', () => {
+    accMenu.classList.toggle('hidden');
+});
+
+// Ativa/Desativa o Alto Contraste
+btnContrast.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+});
+
+// Aumenta o tamanho da fonte da página
+btnFontIncrease.addEventListener('click', () => {
+    document.body.classList.add('large-font');
+});
+
+// Reseta o tamanho da fonte para o normal
+btnFontReset.addEventListener('click', () => {
+    document.body.classList.remove('large-font');
+});

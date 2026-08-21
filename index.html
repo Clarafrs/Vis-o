@@ -427,5 +427,32 @@
         // Inicializa o simulador assim que a página carrega
         updateSimulation();
     </script>
+    <!-- Botão e Painel de Acessibilidade -->
+<div class="fixed bottom-6 right-6 z-50">
+    <!-- Botão Principal -->
+    <button id="acc-toggle-btn" class="bg-cyan-500 text-slate-950 p-4 rounded-full shadow-2xl hover:bg-cyan-400 font-bold flex items-center justify-center transition-all scale-110" title="Acessibilidade">
+        ♿
+    </button>
+
+    <!-- Menu de Opções -->
+    <div id="acc-menu" class="hidden absolute bottom-16 right-0 bg-slate-900 border border-slate-700 p-4 rounded-xl shadow-2xl w-64 space-y-3">
+        <h4 class="text-white font-bold text-sm border-b border-slate-800 pb-2">Acessibilidade</h4>
+        
+        <button id="btn-contrast" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 px-3 rounded flex justify-between items-center">
+            <span>Alto Contraste</span>
+            <span class="text-cyan-400 font-bold">🌗</span>
+        </button>
+
+        <button id="btn-font-increase" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 px-3 rounded flex justify-between items-center">
+            <span>Aumentar Fonte</span>
+            <span class="text-cyan-400 font-bold">A+</span>
+        </button>
+
+        <button id="btn-font-reset" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 px-3 rounded flex justify-between items-center">
+            <span>Tamanho Normal</span>
+            <span class="text-cyan-400 font-bold">A-</span>
+        </button>
+    </div>
+</div>
 </body>
 </html>
