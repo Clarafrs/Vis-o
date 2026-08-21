@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
         .card-glow {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -20,6 +22,53 @@
             box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.25), 0 8px 10px -6px rgba(6, 182, 212, 0.2);
             border-color: rgba(6, 182, 212, 0.6);
         }
+
+        /* --- ESTILOS DE ACESSIBILIDADE --- */
+        /* Alto Contraste */
+        body.high-contrast {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+        body.high-contrast section, 
+        body.high-contrast div, 
+        body.high-contrast header,
+        body.high-contrast select,
+        body.high-contrast input {
+            background-color: #000000 !important;
+            border-color: #ffffff !important;
+            color: #ffffff !important;
+        }
+        body.high-contrast p, 
+        body.high-contrast span, 
+        body.high-contrast h1, 
+        body.high-contrast h2, 
+        body.high-contrast h3, 
+        body.high-contrast button,
+        body.high-contrast a {
+            color: #ffffff !important;
+        }
+        body.high-contrast .text-cyan-400 {
+            color: #ffff00 !important; /* Amarelo puro para contraste */
+        }
+        body.high-contrast .bg-cyan-500,
+        body.high-contrast #progress-bar {
+            background-color: #ffff00 !important;
+            color: #000000 !important;
+        }
+
+        /* Fonte Aumentada */
+        body.large-font p, 
+        body.large-font span, 
+        body.large-font a, 
+        body.large-font li,
+        body.large-font select,
+        body.large-font button {
+            font-size: 1.25rem !important; /* ~20px */
+            line-height: 1.75rem !important;
+        }
+        body.large-font h1 { font-size: 3.5rem !important; }
+        body.large-font h2 { font-size: 2.75rem !important; }
+        body.large-font h3 { font-size: 1.75rem !important; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
@@ -38,7 +87,7 @@
                 <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
                 <a href="#anatomia" class="hover:text-cyan-400 transition-colors">Anatomia</a>
                 <a href="#como-funciona" class="hover:text-cyan-400 transition-colors">Funcionamento</a>
-                <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
+                <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ & Teste</a>
             </nav>
         </div>
     </header>
@@ -46,7 +95,7 @@
     <!-- Hero Section -->
     <section id="inicio" class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-center text-center">
         <span class="text-cyan-400 text-sm font-semibold tracking-wider uppercase mb-3 px-3 py-1 bg-cyan-950 border border-cyan-800 rounded-full">
-            Trabalho das IFA
+            Trabalho de Biologia & Ciência
         </span>
         <h1 class="text-4xl md:text-6xl font-extrabold text-white max-w-4xl leading-tight mb-6">
             Como enxergamos o mundo: A incrível máquina do olho humano
@@ -194,8 +243,7 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-<!-- FAQ & Teste do Ponto Cego -->
+    <!-- FAQ & Teste do Ponto Cego -->
     <section id="faq" class="py-20 max-w-4xl mx-auto px-6">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Perguntas Frequentes & Curiosidades</h2>
@@ -233,18 +281,16 @@
 
         <!-- Lista de Sanfona das Perguntas -->
         <div class="space-y-4">
-            <!-- Pergunta 1 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Por que o símbolo do teste desaparece, mas não fica um "buraco negro"?</span>
                     <span class="text-cyan-400 text-xl font-bold">+</span>
                 </button>
                 <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Quando a imagem do sinal "+" cai exatamente sobre a cabeça do nervo óptico (o ponto cego), o cérebro não recebe dados visuais daquele ponto específico. Em vez de deixar uma mancha preta, o cérebro "preenche" o espaço usando a cor de fundo do redor (o cinza escuro da caixa) para criar uma imagem contínua.
+                    Quando a imagem do sinal "+" cai exatamente sobre a cabeça do nervo óptico (o ponto cego), o cérebro não recebe dados visuais daquele ponto específico. Em vez de deixar uma mancha preta, o cérebro "preenche" o espaço usando a cor de fundo do redor para criar uma imagem contínua.
                 </div>
             </div>
 
-            <!-- Pergunta 2 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Por que a imagem chega invertida na retina?</span>
@@ -255,7 +301,6 @@
                 </div>
             </div>
 
-            <!-- Pergunta 3 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Qual a diferença entre Miopia, Hipermetropia e Astigmatismo?</span>
@@ -268,81 +313,81 @@
                 </div>
             </div>
 
-            <!-- Pergunta 4 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>O que é a Presbiopia (ou "vista cansada")?</span>
                     <span class="text-cyan-400 text-xl font-bold">+</span>
                 </button>
                 <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    A presbiopia é o envelhecimento natural do cristalino, que perde a flexibilidade com o passar dos anos (geralmente após os 40 anos). Com isso, os músculos ciliares não conseguem mais deformar o cristalino para focar em objetos muito próximos, exigindo o uso de óculos de leitura.
+                    A presbiopia é o envelhecimento natural do cristalino, que perde a flexibilidade com o passar dos anos (geralmente após os 40 anos). Com isso, os músculos ciliares não conseguem mais deformar o cristalino para focar em objetos muito próximos.
                 </div>
             </div>
 
-            <!-- Pergunta 5 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Como funciona o Daltonismo?</span>
                     <span class="text-cyan-400 text-xl font-bold">+</span>
                 </button>
                 <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    O daltonismo é uma alteração genética onde há ausência ou funcionamento incorreto de um ou mais tipos de cones — as células sensíveis às cores (vermelho, verde e azul). Isso altera a capacidade de distinguir certos tons de cores.
+                    O daltonismo é uma alteração genética onde há ausência ou funcionamento incorreto de um ou mais tipos de cones — as células sensíveis às cores (vermelho, verde e azul).
                 </div>
             </div>
 
-            <!-- Pergunta 6 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Qual a função dos Cones e Bastonetes na retina?</span>
                     <span class="text-cyan-400 text-xl font-bold">+</span>
                 </button>
                 <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    • <strong>Cones:</strong> Funcionam bem na luz forte e são responsáveis pela visão das cores e pela nitidez dos detalhes (temos cones para vermelho, verde e azul).<br>
-                    • <strong>Bastonetes:</strong> São altamente sensíveis à luz, permitindo enxergar em ambientes escuros e detectar movimentos periféricos, mas não captam cores (apenas tons de cinza).
+                    • <strong>Cones:</strong> Funcionam bem na luz forte e são responsáveis pela visão das cores e pela nitidez dos detalhes.<br>
+                    • <strong>Bastonetes:</strong> São altamente sensíveis à luz, permitindo enxergar em ambientes escuros, mas não captam cores.
                 </div>
             </div>
 
-            <!-- Pergunta 7 -->
             <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                 <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
                     <span>Por que piscamos tanto?</span>
                     <span class="text-cyan-400 text-xl font-bold">+</span>
                 </button>
                 <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Piscamos em média de 15 a 20 vezes por minuto involuntariamente. O ato de piscar espalha as lágrimas pela superfície do olho, mantendo a córnea lubrificada, limpa contra poeira e nutrida com oxigênio.
-                </div>
-            </div>
-
-            <!-- Pergunta 8 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Por que enxergamos em 3D (visão tridimensional)?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Temos visão binocular: nossos dois olhos estão separados por alguns centímetros e captam imagens ligeiramente diferentes do mesmo objeto. O cérebro funde essas duas perspectivas em uma só, calculando com precisão a profundidade e a distância.
-                </div>
-            </div>
-
-            <!-- Pergunta 9 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                <button class="w-full text-left p-5 font-semibold text-white flex justify-between items-center hover:text-cyan-400 transition-colors faq-btn">
-                    <span>Por que ficamos com a visão embaçada ao olhar para telas por muito tempo?</span>
-                    <span class="text-cyan-400 text-xl font-bold">+</span>
-                </button>
-                <div class="hidden p-5 pt-0 text-slate-400 text-sm border-t border-slate-800/50 leading-relaxed">
-                    Isso ocorre devido à fadiga acomodativa. Ao olhar para uma tela fixa próxima, os músculos ciliares do olho ficam sob contração contínua. Além disso, piscamos cerca de 50% menos quando usamos computadores e celulares, ressecando a superfície do olho.
+                    Piscamos em média de 15 a 20 vezes por minuto. O ato de piscar espalha as lágrimas, mantendo a córnea lubrificada, limpa e nutrida com oxigênio.
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Botão e Painel de Acessibilidade Flutuante -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="acc-toggle-btn" class="bg-cyan-500 text-slate-950 w-14 h-14 rounded-full shadow-2xl hover:bg-cyan-400 font-bold flex items-center justify-center transition-all text-xl cursor-pointer" title="Acessibilidade">
+            ♿
+        </button>
+
+        <div id="acc-menu" class="hidden absolute bottom-16 right-0 bg-slate-900 border border-slate-700 p-4 rounded-xl shadow-2xl w-64 space-y-3">
+            <h4 class="text-white font-bold text-sm border-b border-slate-800 pb-2">Opções de Acessibilidade</h4>
+            
+            <button id="btn-contrast" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 px-3 rounded flex justify-between items-center transition-colors">
+                <span>Alto Contraste</span>
+                <span class="text-cyan-400 font-bold">🌗</span>
+            </button>
+
+            <button id="btn-font-increase" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 px-3 rounded flex justify-between items-center transition-colors">
+                <span>Aumentar Fonte</span>
+                <span class="text-cyan-400 font-bold">A+</span>
+            </button>
+
+            <button id="btn-font-reset" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 px-3 rounded flex justify-between items-center transition-colors">
+                <span>Tamanho Normal</span>
+                <span class="text-cyan-400 font-bold">A-</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
         <p>Trabalho Escolar sobre a Visão Humana • Publicado via GitHub Pages</p>
     </footer>
 
-    <!-- Scripts JavaScript -->
+    <!-- Scripts JavaScript Completo -->
     <script>
         // 1. Barra de Progresso de Leitura
         window.addEventListener('scroll', () => {
@@ -370,7 +415,7 @@
         const sliderValue = document.getElementById('slider-value');
         const simDescription = document.getElementById('sim-description');
 
-        const MAX_GRAUS = 6.0; // Define o máximo em 6 graus de dioptria
+        const MAX_GRAUS = 6.0;
 
         const descriptions = {
             'normal': '<strong>Visão Normal:</strong> A luz passa pela córnea e pelo cristalino focando perfeitamente sobre a retina.',
@@ -383,11 +428,8 @@
         function updateSimulation() {
             const condition = simCondition.value;
             const val = parseFloat(simSlider.value);
-            
-            // Converte a porcentagem do slider (0-100) para graus (0 a 6.00)
             const graus = ((val / 100) * MAX_GRAUS).toFixed(2);
 
-            // Atualiza os rótulos dinamicamente
             if (condition === 'normal') {
                 sliderValue.textContent = '0.00 Grau';
             } else if (condition.startsWith('daltonismo')) {
@@ -398,11 +440,9 @@
 
             simDescription.innerHTML = descriptions[condition];
 
-            // Limpa os filtros
             simImage.style.filter = 'none';
             simOverlay.style.backgroundColor = 'transparent';
 
-            // Aplica as alterações no filtro
             if (condition === 'miopia') {
                 const blurPx = graus * 2.5; 
                 simImage.style.filter = `blur(${blurPx}px)`;
@@ -423,36 +463,30 @@
 
         simCondition.addEventListener('change', updateSimulation);
         simSlider.addEventListener('input', updateSimulation);
-
-        // Inicializa o simulador assim que a página carrega
         updateSimulation();
+
+        // 4. Lógica do Menu de Acessibilidade
+        const accToggleBtn = document.getElementById('acc-toggle-btn');
+        const accMenu = document.getElementById('acc-menu');
+        const btnContrast = document.getElementById('btn-contrast');
+        const btnFontIncrease = document.getElementById('btn-font-increase');
+        const btnFontReset = document.getElementById('btn-font-reset');
+
+        accToggleBtn.addEventListener('click', () => {
+            accMenu.classList.toggle('hidden');
+        });
+
+        btnContrast.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+        });
+
+        btnFontIncrease.addEventListener('click', () => {
+            document.body.classList.add('large-font');
+        });
+
+        btnFontReset.addEventListener('click', () => {
+            document.body.classList.remove('large-font');
+        });
     </script>
-    <!-- Botão e Painel de Acessibilidade -->
-<div class="fixed bottom-6 right-6 z-50">
-    <!-- Botão Principal -->
-    <button id="acc-toggle-btn" class="bg-cyan-500 text-slate-950 p-4 rounded-full shadow-2xl hover:bg-cyan-400 font-bold flex items-center justify-center transition-all scale-110" title="Acessibilidade">
-        ♿
-    </button>
-
-    <!-- Menu de Opções -->
-    <div id="acc-menu" class="hidden absolute bottom-16 right-0 bg-slate-900 border border-slate-700 p-4 rounded-xl shadow-2xl w-64 space-y-3">
-        <h4 class="text-white font-bold text-sm border-b border-slate-800 pb-2">Acessibilidade</h4>
-        
-        <button id="btn-contrast" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 px-3 rounded flex justify-between items-center">
-            <span>Alto Contraste</span>
-            <span class="text-cyan-400 font-bold">🌗</span>
-        </button>
-
-        <button id="btn-font-increase" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 px-3 rounded flex justify-between items-center">
-            <span>Aumentar Fonte</span>
-            <span class="text-cyan-400 font-bold">A+</span>
-        </button>
-
-        <button id="btn-font-reset" class="w-full text-left text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 px-3 rounded flex justify-between items-center">
-            <span>Tamanho Normal</span>
-            <span class="text-cyan-400 font-bold">A-</span>
-        </button>
-    </div>
-</div>
 </body>
 </html>
